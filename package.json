@@ -1,0 +1,19 @@
+{
+  "name": "spacex-api-wrapper",
+  "version": "1.0.0",
+  "description": "A Node.js API Wrapper for r-spacex/SpaceX-API",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.85.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomas-Smyth/SpaceX-API-Wrapper.git"
+  },
+  "homepage": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper#readme",
+  "bugs": {
+    "url": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper/issues"
+  },
+  "author": "Thomas Smyth",
+  "license": "ISC"
+}
