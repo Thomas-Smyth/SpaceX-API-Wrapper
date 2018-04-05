@@ -1,6 +1,6 @@
 {
   "name": "spacex-api-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Node.js API Wrapper for r-spacex/SpaceX-API",
   "main": "index.js",
   "dependencies": {
