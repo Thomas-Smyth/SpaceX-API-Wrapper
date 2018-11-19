@@ -1,19 +1,42 @@
 {
   "name": "spacex-api-wrapper",
-  "version": "1.0.1",
-  "description": "A Node.js API Wrapper for r-spacex/SpaceX-API",
-  "main": "index.js",
-  "dependencies": {
-    "request": "^2.85.0"
-  },
+  "version": "3.0.0",
+  "description": "A Javascript API Wrapper for r-spacex/SpaceX-API",
+  "author": "Thomas Smyth",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Thomas-Smyth/SpaceX-API-Wrapper.git"
   },
-  "homepage": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper#readme",
   "bugs": {
     "url": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper/issues"
   },
-  "author": "Thomas Smyth",
-  "license": "ISC"
+  "homepage": "ttps://github.com/Thomas-Smyth/SpaceX-API-Wrapper#readme",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "start": "node index.js",
+    "build": "babel src -d lib",
+    "dev": "nodemon index.js",
+    "lint": "eslint --fix src && prettier --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "prepublish": "npm run clean && npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.4",
+    "lint-staged": "^8.0.5",
+    "nodemon": "^1.18.6",
+    "prettier": "^1.15.2",
+    "rimraf": "^2.6.2"
+  }
 }
