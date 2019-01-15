@@ -1,4 +1,4 @@
-const SpaceXAPI = require("../../index");
+const SpaceXAPI = require('../../index');
 
 let SpaceX = new SpaceXAPI();
 
