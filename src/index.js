@@ -23,17 +23,43 @@ class SpaceX {
     }
   }
 
-  static async info(settings) {
+  static buildFilter(filter) {
+    return '?' + queryString.stringify(filter);
+  }
+
+  static info(settings) {
     return SpaceX.makeRequest('/info', settings);
   }
 
-  static async getAllCapsules(filter, settings) {
-    filter = '?' + queryString.stringify(filter);
-    return SpaceX.makeRequest('/capsules' + filter, settings);
+  static getAllCapsules(filter, settings) {
+    return SpaceX.makeRequest(
+      '/capsules' + SpaceX.buildFilter(filter),
+      settings
+    );
   }
 
-  static async getCapsule(id, settings) {
+  static getCapsule(id, settings) {
     return SpaceX.makeRequest('/capsules/' + id, settings);
+  }
+
+  static getAllCores(filter, settings) {
+    return SpaceX.makeRequest('/cores' + SpaceX.buildFilter(filter), settings);
+  }
+
+  static getCore(id, settings) {
+    return SpaceX.makeRequest('/cores/' + id, settings);
+  }
+
+  static getAllDragons(fitler, settings) {
+    return SpaceX.makeRequest('/dragons', settings);
+  }
+
+  static getDragon(id, settings) {
+    return SpaceX.makeRequest('/dragons/' + id, settings);
+  }
+
+  static getAllHistory(settings) {
+    return SpaceX.makeRequest('/history', settings);
   }
 }
 

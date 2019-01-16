@@ -1,49 +1,51 @@
 import SpaceX from '../../src/index';
 
 // ------------------------------------------------------------
-//                        All Capsules
+//                        All Cores
 // ------------------------------------------------------------
 
-test('It should return all v3 capsules', async () => {
-  const data = await SpaceX.getAllCapsules();
+test('It should return all v3 cores', async () => {
+  const data = await SpaceX.getAllCores();
   data.forEach(item => {
-    expect(item).toHaveProperty('capsule_serial');
-    expect(item).toHaveProperty('capsule_id');
+    expect(item).toHaveProperty('core_serial');
     expect(item).toHaveProperty('status');
     expect(item).toHaveProperty('original_launch');
     expect(item).toHaveProperty('original_launch_unix');
-    expect(item).toHaveProperty('landings');
-    expect(item).toHaveProperty('type');
-    expect(item).toHaveProperty('details');
     expect(item).toHaveProperty('reuse_count');
+    expect(item).toHaveProperty('rtls_attempts');
+    expect(item).toHaveProperty('rtls_landings');
+    expect(item).toHaveProperty('asds_attempts');
+    expect(item).toHaveProperty('asds_landings');
+    expect(item).toHaveProperty('water_landing');
+    expect(item).toHaveProperty('details');
   });
 });
 
 // ------------------------------------------------------------
-//                    All Capsules Error
+//                      All Cores Error
 // ------------------------------------------------------------
 
-test('It should return an empty capsules array', async () => {
-  const data = await SpaceX.getAllCapsules({
-    capsule_serial: 'C866'
+test('It should return an empty cores array', async () => {
+  const data = await SpaceX.getAllCores({
+    core_serial: 'B1000'
   });
   expect(data).toEqual([]);
 });
 
 // ------------------------------------------------------------
-//                       One Capsule
+//                       One Core
 // ------------------------------------------------------------
 
-test('It should return capsule C101', async () => {
-  const data = await SpaceX.getCapsule('C101');
-  expect(data).toHaveProperty('capsule_serial', 'C101');
+test('It should return core B0007', async () => {
+  const data = await SpaceX.getCore('B0007');
+  expect(data).toHaveProperty('core_serial', 'B0007');
 });
 
 // ------------------------------------------------------------
-//                     One Capsule Error
+//                     One Core Error
 // ------------------------------------------------------------
 
 test('It should return undefined', async () => {
-  const data = await SpaceX.getCapsule('C1011');
+  const data = await SpaceX.getCore('B1000');
   expect(data).toEqual(undefined);
 });
