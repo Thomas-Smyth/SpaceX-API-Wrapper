@@ -1,6 +1,6 @@
 {
   "name": "spacex-api-wrapper",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A Javascript API Wrapper for r-spacex/SpaceX-API",
   "author": "Thomas Smyth",
   "license": "MIT",
