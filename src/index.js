@@ -61,6 +61,14 @@ class SpaceX {
   static getAllHistory(settings) {
     return SpaceX.makeRequest('/history', settings);
   }
+
+  static getAllLandPads(settings) {
+    return SpaceX.makeRequest('/landpads', settings);
+  }
+
+  static getLandPad(id, settings) {
+    return SpaceX.makeRequest('/landpads/' + id, settings);
+  }
 }
 
 export default SpaceX;
