@@ -67,5 +67,5 @@ console.log(info);
 * What is returned in replace of a 404?
     - When the API returns a 404, it occurs usually when an id in an endpoint was not valid. This has been handled in this repository by returning `undefined`.
 * Why does <insert function name here> have a filter option or an option to obtain a specific id?
-    - The tests used for this wrapper are copies of [r-spacex/SpaceX-API tests](https://github.com/r-spacex/SpaceX-API/tree/master/test). If that feature has not been tested in their repository it has not yet been implemented. It is my aim to improve these tests over time, for both repositories, and then implement the additions as features to this wrapper.
+    - The tests used for this wrapper are copies of [r-spacex/SpaceX-API tests](https://github.com/r-spacex/SpaceX-API/tree/master/test). If that feature has not been tested in their repository it has not yet been implemented. It is my aim to improve these tests over time, for both repositories, and then implement the additions as features to this wrapper to match the documentation.
 ```
