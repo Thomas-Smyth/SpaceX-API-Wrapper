@@ -2,7 +2,7 @@ import axios from 'axios';
 import queryString from 'query-string';
 
 class SpaceX {
-  static async makeRequest(route, settings = {}) {
+  static async makeRequest(route, query, settings = {}) {
     try {
       let response = await axios({
         method: settings.method || 'get',
@@ -11,7 +11,7 @@ class SpaceX {
           (settings.baseURL || 'api.spacexdata.com') +
           '/' +
           (settings.version || 'v3'),
-        url: route,
+        url: route + '?' + queryString.stringify(query),
         timeout: settings.timeout
       });
 
@@ -23,58 +23,84 @@ class SpaceX {
     }
   }
 
-  static buildFilter(filter) {
-    return '?' + queryString.stringify(filter);
+  static getAllCapsules(query, settings) {
+    return SpaceX.makeRequest('/capsules', query, settings);
+  }
+
+  static getCapsule(id, query, settings) {
+    return SpaceX.makeRequest('/capsules/' + id, query, settings);
+  }
+
+  static getUpcomingCapsules(query, settings) {
+    return SpaceX.makeRequest('/capsules/upcoming', query, settings);
+  }
+
+  static getPastCapsules(query, settings) {
+    return SpaceX.makeRequest('/capsules/past', query, settings);
+  }
+
+  static getAllCores(query, settings) {
+    return SpaceX.makeRequest('/cores', query, settings);
+  }
+
+  static getCore(id, query, settings) {
+    return SpaceX.makeRequest('/cores/' + id, query, settings);
+  }
+
+  static getUpcomingCores(query, settings) {
+    return SpaceX.makeRequest('/cores/upcoming', query, settings);
+  }
+
+  static getPastCores(query, settings) {
+    return SpaceX.makeRequest('/cores/past', query, settings);
+  }
+
+  static getAllDragons(query, settings) {
+    return SpaceX.makeRequest('/dragons', query, settings);
+  }
+
+  static getDragon(id, query, settings) {
+    return SpaceX.makeRequest('/dragons/' + id, query, settings);
+  }
+
+  static getAllHistory(query, settings) {
+    return SpaceX.makeRequest('/history', query, settings);
+  }
+
+  static getHistory(id, query, settings) {
+    return SpaceX.makeRequest('/history/' + id, query, settings);
   }
 
   static info(settings) {
     return SpaceX.makeRequest('/info', settings);
   }
 
-  static getAllCapsules(filter, settings) {
-    return SpaceX.makeRequest(
-      '/capsules' + SpaceX.buildFilter(filter),
-      settings
-    );
+  static apiInfo(settings) {
+    return SpaceX.makeRequest('/', settings);
   }
 
-  static getCapsule(id, settings) {
-    return SpaceX.makeRequest('/capsules/' + id, settings);
+  static getAllLandingPads(query, settings) {
+    return SpaceX.makeRequest('/landpads', query, settings);
   }
 
-  static getAllCores(filter, settings) {
-    return SpaceX.makeRequest('/cores' + SpaceX.buildFilter(filter), settings);
+  static getLandingPad(id, query, settings) {
+    return SpaceX.makeRequest('/landpads/' + id, query, settings);
   }
 
-  static getCore(id, settings) {
-    return SpaceX.makeRequest('/cores/' + id, settings);
+  static getAllLaunches(query, settings) {
+    return SpaceX.makeRequest('/launches', query, settings);
   }
 
-  static getAllDragons(fitler, settings) {
-    return SpaceX.makeRequest('/dragons', settings);
+  static getLaunch(id, query, settings) {
+    return SpaceX.makeRequest('/launches' + id, query, settings);
   }
 
-  static getDragon(id, settings) {
-    return SpaceX.makeRequest('/dragons/' + id, settings);
+  static getPastLaunches(query, settings) {
+    return SpaceX.makeRequest('/launches/past', query, settings);
   }
 
-  static getAllHistory(settings) {
-    return SpaceX.makeRequest('/history', settings);
-  }
-
-  static getAllLandPads(settings) {
-    return SpaceX.makeRequest('/landpads', settings);
-  }
-
-  static getLandPad(id, settings) {
-    return SpaceX.makeRequest('/landpads/' + id, settings);
-  }
-
-  static getAllLaunches(filter, settings) {
-    return SpaceX.makeRequest(
-      '/launches' + SpaceX.buildFilter(filter),
-      settings
-    );
+  static getUpcomingLaunches(query, settings) {
+    return SpaceX.makeRequest('/launches/upcoming', query, settings);
   }
 
   static getLatestLaunch(settings) {
@@ -85,51 +111,48 @@ class SpaceX {
     return SpaceX.makeRequest('/launches/next', settings);
   }
 
-  static getAllPastLaunches(filter, settings) {
-    return SpaceX.makeRequest('/launches/past', settings);
+  static getAllLaunchPads(query, settings) {
+    return SpaceX.makeRequest('/launchpads', query, settings);
   }
 
-  static getUpcomingLaunches(filter, settings) {
-    return SpaceX.makeRequest('/launches/upcoming', settings);
+  static getLaunchPad(id, query, settings) {
+    return SpaceX.makeRequest('/launchpads/' + id, query, settings);
   }
 
-  static getAllLaunchPads(settings) {
-    return SpaceX.makeRequest('/launchpads', settings);
+  static getAllMissions(query, settings) {
+    return SpaceX.makeRequest('/missions', query, settings);
   }
 
-  static getLaunchPad(id, settings) {
-    return SpaceX.makeRequest('/launchpads/' + id, settings);
+  static getMission(id, query, settings) {
+    return SpaceX.makeRequest('/missions', query, settings);
   }
 
-  static getAllPayloads(filter, settings) {
-    return SpaceX.makeRequest(
-      '/payloads' + SpaceX.buildFilter(filter),
-      settings
-    );
+  static getAllPayloads(query, settings) {
+    return SpaceX.makeRequest('/payloads', query, settings);
   }
 
-  static getPayload(id, settings) {
-    return SpaceX.makeRequest('/payloads/' + id, settings);
+  static getPayload(id, query, settings) {
+    return SpaceX.makeRequest('/payloads/' + id, query, settings);
+  }
+
+  static getAllRockets(query, settings) {
+    return SpaceX.makeRequest('/rockets', query, settings);
+  }
+
+  static getRocket(id, query, settings) {
+    return SpaceX.makeRequest('/rockets/' + id, query, settings);
   }
 
   static getRoadster(settings) {
     return SpaceX.makeRequest('/roadster', settings);
   }
 
-  static getAllRockets(settings) {
-    return SpaceX.makeRequest('/rockets', settings);
+  static getAllShips(query, settings) {
+    return SpaceX.makeRequest('/ships', query, settings);
   }
 
-  static getRocket(id, settings) {
-    return SpaceX.makeRequest('/rockets/' + id, settings);
-  }
-
-  static getAllShips(filter, settings) {
-    return SpaceX.makeRequest('/ships' + SpaceX.buildFilter(filter), settings);
-  }
-
-  static getShip(id, settings) {
-    return SpaceX.makeRequest('/ships/' + id, settings);
+  static getShip(id, query, settings) {
+    return SpaceX.makeRequest('/ships/' + id, query, settings);
   }
 }
 
