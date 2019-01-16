@@ -1,5 +1,6 @@
 # Project files
-lib/
+src/
+tests/
 
 # npm / yarn packages
 package-lock.json
