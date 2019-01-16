@@ -1,12 +1,13 @@
-# Dependency directories
-node_modules/
-
-# npm package lock
-package-lock.json
-
 # Project files
 src/
 tests/
+
+# npm / yarn packages
+package-lock.json
+yarn.lock
+
+# Dependency directories
+node_modules/
 
 #IDEs
 .idea/

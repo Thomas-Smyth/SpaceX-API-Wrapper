@@ -12,31 +12,40 @@
     "url": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper/issues"
   },
   "homepage": "ttps://github.com/Thomas-Smyth/SpaceX-API-Wrapper#readme",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf build",
     "start": "node index.js",
     "build": "babel src -d lib",
     "dev": "nodemon index.js",
-    "lint": "eslint --fix src && prettier --write \"src/**/*.js\"",
+    "test": "jest",
+    "lint": "eslint --fix src tests && prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
     "precommit": "lint-staged",
-    "prepublish": "npm run clean && npm run lint && npm run build"
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.9.0",
-    "eslint-config-prettier": "^3.3.0",
+    "eslint": "^5.12.0",
+    "eslint-config-prettier": "^3.4.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^1.1.4",
-    "lint-staged": "^8.0.5",
-    "nodemon": "^1.18.6",
-    "prettier": "^1.15.2",
-    "rimraf": "^2.6.2"
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "query-string": "^6.2.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

@@ -1,3 +1,10 @@
+# Project files
+lib/
+
+# npm / yarn packages
+package-lock.json
+yarn.lock
+
 # Dependency directories
 node_modules/
 
