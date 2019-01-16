@@ -62,6 +62,7 @@ console.log(info);
    },
    "summary":"SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets."
 }
+```
 
 ## Documentation
 Coming soon...
@@ -71,4 +72,3 @@ Coming soon...
     - When the API returns a 404, it occurs usually when an id in an endpoint was not valid. This has been handled in this repository by returning `undefined`.
 * The test seems a little odd?
     - The tests used for this wrapper are copies of [r-spacex/SpaceX-API tests](https://github.com/r-spacex/SpaceX-API/tree/master/test). It seems that these are out of date for their own API. Once they are updated and improved I will update the tests here.
-```
