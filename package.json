@@ -1,6 +1,6 @@
 {
   "name": "spacex-api-wrapper",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A Javascript API Wrapper for r-spacex/SpaceX-API",
   "author": "Thomas Smyth",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper/issues"
   },
-  "homepage": "ttps://github.com/Thomas-Smyth/SpaceX-API-Wrapper#readme",
+  "homepage": "https://github.com/Thomas-Smyth/SpaceX-API-Wrapper#readme",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf build",
@@ -43,7 +43,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "query-string": "^6.2.0"
   },
   "jest": {
