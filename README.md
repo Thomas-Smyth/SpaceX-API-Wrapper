@@ -63,6 +63,9 @@ console.log(info);
    "summary":"SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets."
 }
 
+## Documentation
+Coming soon...
+
 ## FAQs
 * What is returned in replace of a 404?
     - When the API returns a 404, it occurs usually when an id in an endpoint was not valid. This has been handled in this repository by returning `undefined`.
