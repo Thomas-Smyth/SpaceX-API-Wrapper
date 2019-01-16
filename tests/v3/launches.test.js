@@ -137,7 +137,7 @@ test('It should return the next launch', async () => {
 // ------------------------------------------------------------
 
 test('It should return all past launches', async () => {
-  const data = await SpaceX.getAllPastLaunches();
+  const data = await SpaceX.getPastLaunches();
   data.forEach(launch => {
     expect(launch.upcoming).toBe(false);
   });
