@@ -156,4 +156,4 @@ class SpaceX {
   }
 }
 
-export default SpaceX;
+module.exports = SpaceX;
