@@ -28,11 +28,11 @@ To install via `yarn` use:
 ## Basic Usage
 To use the wrapper, require the module and initialise the module:
 ```js
-import SpaceX from 'SpaceX-API-Wrapper';
+let SpacexApiWrapper = require("spacex-api-wrapper");
 
-let info = await SpaceX.info();
-
-console.log(info);
+SpacexApiWrapper.info().then(function(data) {
+    console.log(data);
+});
 ```
 
 ```
