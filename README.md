@@ -35,7 +35,7 @@ SpacexApiWrapper.info().then(function(data) {
 });
 ```
 
-```
+```JSON
 {
   "name": "SpaceX",
   "founder": "Elon Musk",
