@@ -13,11 +13,6 @@
 
 </div>
 
-## Documentation
-See the [Wiki](https://github.com/Thomas-Smyth/SpaceX-API-Wrapper/wiki) for full wrapper documentation.
-
-Documentation for the API can be found [here](https://github.com/r-spacex/SpaceX-API/wiki).
-
 ## Installation
 To install via `npm` use:
 `npm i spacex-api-wrapper`
@@ -78,6 +73,8 @@ Arguments:
     - `timeout` - How long before timing out a request.
     
 All arguments other than the `id` argument (only required a small number of methods) are optional.
+
+Documentation for the API can be found [here](https://github.com/r-spacex/SpaceX-API/wiki).
 
 ### Capsules
 * [`.getAllCapsules(query, settings)`](https://documenter.getpostman.com/view/2025350/RWaEzAiG#00ac651a-8ba2-4b4c-858a-4034dd1254fa)
@@ -141,5 +138,5 @@ All arguments other than the `id` argument (only required a small number of meth
 ## FAQs
 * What is returned in replace of a 404?
     - When the API returns a 404, it occurs usually when an id in an endpoint was not valid. This has been handled in this repository by returning `undefined`.
-* The test seems a little odd?
+* The tests seem a little odd?
     - The tests used for this wrapper are copies of [r-spacex/SpaceX-API tests](https://github.com/r-spacex/SpaceX-API/tree/master/test). It seems that these are out of date for their own API. Once they are updated and improved I will update the tests here.
